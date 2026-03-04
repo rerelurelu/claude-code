@@ -26,17 +26,18 @@
     {
       "name": "dig",
       "source": "./dig",
-      "description": "Clarify ambiguities in plans with structured questions",
-      "version": "2.0.0",
+      "description": "Deep exploratory interview to discover unknowns and strengthen plans",
+      "version": "3.0.0",
       "author": {
         "name": "Kuu"
       },
       "keywords": [
         "planning",
         "questions",
-        "clarification",
-        "ambiguity",
-        "dig"
+        "assumptions",
+        "investigation",
+        "dig",
+        "interview"
       ]
     },
     {
