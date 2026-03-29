@@ -1,11 +1,10 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "kuu-marketplace",
+  "name": "relu-marketplace",
   "version": "1.0.3",
-  "description": "Kuu's personal Claude Code plugin marketplace",
+  "description": "Relu's Claude Code plugin marketplace",
   "owner": {
-    "name": "Kuu",
-    "email": "fumiya.kume@hotmail.com"
+    "name": "Relu"
   },
   "plugins": [
     {
@@ -14,7 +13,7 @@
       "description": "Removes AI-generated code slop from code changes in the current branch",
       "version": "1.0.0",
       "author": {
-        "name": "Kuu"
+        "name": "Relu"
       },
       "keywords": [
         "code-cleanup",
@@ -29,7 +28,7 @@
       "description": "Deep exploratory interview to discover unknowns and strengthen plans",
       "version": "3.0.0",
       "author": {
-        "name": "Kuu"
+        "name": "Relu"
       },
       "keywords": [
         "planning",
@@ -46,7 +45,7 @@
       "description": "Automatically diagnose and fix CI failures using sub-agent exploration",
       "version": "1.0.0",
       "author": {
-        "name": "Kuu"
+        "name": "Relu"
       },
       "keywords": [
         "ci",
@@ -62,7 +61,7 @@
       "description": "Decompose complex tasks into detailed, actionable todos with rich descriptions. Each todo is specific, achievable, and small enough to execute independently.",
       "version": "1.1.0",
       "author": {
-        "name": "Kuu"
+        "name": "Relu"
       },
       "keywords": [
         "planning",
@@ -70,6 +69,54 @@
         "todos",
         "task-breakdown",
         "actionable"
+      ]
+    },
+    {
+      "name": "codex",
+      "source": "./codex",
+      "description": "Invokes Codex CLI (OpenAI) for reviewing implementation plans, designs, and code",
+      "version": "1.0.0",
+      "author": {
+        "name": "Relu"
+      },
+      "keywords": [
+        "codex",
+        "code-review",
+        "openai",
+        "review",
+        "design-review"
+      ]
+    },
+    {
+      "name": "cursor",
+      "source": "./cursor",
+      "description": "Invokes Cursor Agent CLI (Composer 2) for reviewing implementation plans, designs, and code",
+      "version": "1.0.0",
+      "author": {
+        "name": "Relu"
+      },
+      "keywords": [
+        "cursor",
+        "composer",
+        "code-review",
+        "review",
+        "design-review"
+      ]
+    },
+    {
+      "name": "clean-code",
+      "source": "./clean-code",
+      "description": "Post-implementation code quality polishing. Runs simplify then deslop in sequence.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Relu"
+      },
+      "keywords": [
+        "code-quality",
+        "simplify",
+        "deslop",
+        "polish",
+        "clean-code"
       ]
     }
   ]

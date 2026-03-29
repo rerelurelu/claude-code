@@ -1,0 +1,11 @@
+{
+  "name": "clean-code",
+  "version": "1.0.0",
+  "description": "Post-implementation code quality polishing. Runs simplify then deslop in sequence.",
+  "author": {
+    "name": "Relu"
+  },
+  "repository": "https://github.com/rerelurelu/claude-code",
+  "license": "GPL-3.0",
+  "keywords": ["code-quality", "simplify", "deslop", "polish", "clean-code"]
+}
