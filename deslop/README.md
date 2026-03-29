@@ -9,8 +9,8 @@ This plugin helps maintain code quality by identifying and removing unnecessary 
 ## Installation
 
 ```
-/plugin marketplace add fumiya-kume/claude-code
-/plugin install deslop@fumiya-kume/claude-code
+/plugin marketplace add rerelurelu/claude-code
+/plugin install deslop@rerelurelu/claude-code
 ```
 
 ## Usage

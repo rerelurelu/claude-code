@@ -14,14 +14,14 @@ You can install plugins directly from Claude Code using the plugin management sy
 
 1. Add this repository as a marketplace:
    ```
-   /plugin marketplace add fumiya-kume/claude-code
+   /plugin marketplace add rerelurelu/claude-code
    ```
 
 2. Install the plugins:
    ```
-   /plugin install deslop@fumiya-kume/claude-code
-   /plugin install dig@fumiya-kume/claude-code
-   /plugin install fix-ci@fumiya-kume/claude-code
+   /plugin install deslop@rerelurelu/claude-code
+   /plugin install dig@rerelurelu/claude-code
+   /plugin install fix-ci@rerelurelu/claude-code
    ```
 
 3. Restart Claude Code to activate the plugins.
@@ -31,7 +31,7 @@ You can install plugins directly from Claude Code using the plugin management sy
 Alternatively, you can clone this repository and use it as a local marketplace:
 
 ```bash
-git clone https://github.com/fumiya-kume/claude-code.git
+git clone https://github.com/rerelurelu/claude-code.git
 ```
 
 Then in Claude Code:

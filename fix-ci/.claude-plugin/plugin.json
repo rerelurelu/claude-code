@@ -3,10 +3,9 @@
   "version": "1.0.1",
   "description": "Automatically diagnose and fix CI failures using sub-agent exploration",
   "author": {
-    "name": "Kuu",
-    "email": "fumiya.kume@hotmail.com"
+    "name": "Relu"
   },
-  "repository": "https://github.com/fumiya-kume/claude-code",
+  "repository": "https://github.com/rerelurelu/claude-code",
   "license": "GPL-3.0",
   "keywords": ["ci", "continuous-integration", "debugging", "automation", "github-actions"]
 }

@@ -13,8 +13,8 @@ This plugin helps break down complex tasks into specific, achievable, and small 
 ## Installation
 
 ```bash
-/plugin marketplace add fumiya-kume/claude-code
-/plugin install decomposition@fumiya-kume/claude-code
+/plugin marketplace add rerelurelu/claude-code
+/plugin install decomposition@rerelurelu/claude-code
 ```
 
 ## Usage

@@ -3,10 +3,9 @@
   "version": "3.0.0",
   "description": "Deep exploratory interview to discover unknowns and strengthen plans",
   "author": {
-    "name": "Kuu",
-    "email": "fumiya.kume@hotmail.com"
+    "name": "Relu"
   },
-  "repository": "https://github.com/fumiya-kume/claude-code",
+  "repository": "https://github.com/rerelurelu/claude-code",
   "license": "GPL-3.0",
   "keywords": ["planning", "questions", "assumptions", "investigation", "dig", "interview"]
 }

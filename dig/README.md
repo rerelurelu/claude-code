@@ -9,8 +9,8 @@ This plugin conducts deep, iterative interviews to uncover hidden assumptions, u
 ## Installation
 
 ```
-/plugin marketplace add fumiya-kume/claude-code
-/plugin install dig@fumiya-kume/claude-code
+/plugin marketplace add rerelurelu/claude-code
+/plugin install dig@rerelurelu/claude-code
 ```
 
 ## Usage

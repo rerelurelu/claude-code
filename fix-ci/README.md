@@ -9,8 +9,8 @@ This plugin uses a sub-agent to analyze CI failures, research solutions, and imp
 ## Installation
 
 ```
-/plugin marketplace add fumiya-kume/claude-code
-/plugin install fix-ci@fumiya-kume/claude-code
+/plugin marketplace add rerelurelu/claude-code
+/plugin install fix-ci@rerelurelu/claude-code
 ```
 
 ## Usage
