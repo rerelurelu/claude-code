@@ -106,7 +106,7 @@
     {
       "name": "clean-code",
       "source": "./clean-code",
-      "description": "Post-implementation code quality polishing. Runs simplify then deslop in sequence.",
+      "description": "Post-implementation code quality polishing. Runs simplify, deslop, then comment accuracy and dead-code checks.",
       "version": "1.0.0",
       "author": {
         "name": "Relu"
