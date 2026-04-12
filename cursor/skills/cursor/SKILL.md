@@ -14,13 +14,14 @@ Invoke Cursor Agent CLI (Composer 2) to perform reviews and analysis via Bash to
 ## Command
 
 ```bash
-cursor agent --print --model composer-2 --trust --workspace <project_directory> --mode <mode> "<request>"
+cursor agent --print --model composer-2 --trust --workspace <project_directory> --mode ask "<request>"
 ```
 
 ## Mode Selection
 
-**Need to read the codebase?** → `--mode plan`
-**General question or concept?** → `--mode ask`
+常に `--mode ask` を使用する。ask モードでもコードベース全体の読み取りが可能で、レビュー・分析・質問すべてに適している。
+
+`--mode plan` は使用しない（plan はコード変更の計画用であり、レビュー用途には不適切）。
 
 ## Review Type Selection
 
@@ -43,8 +44,7 @@ Every request sent to Cursor **MUST** include both of the following:
 | `--model composer-2` | Use Composer 2 model |
 | `--trust` | Run in trust mode |
 | `--workspace <dir>` | Target project directory |
-| `--mode plan` | Codebase analysis mode |
-| `--mode ask` | General question mode |
+| `--mode ask` | レビュー・分析モード（常にこれを使用） |
 | `"<request>"` | The review request |
 
 ## Workflow
@@ -52,7 +52,7 @@ Every request sent to Cursor **MUST** include both of the following:
 1. Receive review request from the user
 2. Determine the target project directory
 3. Determine the review type: plan / design / code
-4. Select the mode: codebase analysis → `plan` / general question → `ask`
+4. `--mode ask` を使用（常に固定）
 5. Compose the prompt (always include filtering criteria + no-confirmation instruction)
 6. Execute Cursor
 7. Scrutinize results — if there are doubts or disagreements, enter the discussion flow
