@@ -43,78 +43,78 @@ Then in Claude Code:
 
 | Plugin | Description |
 |--------|-------------|
-| [deslop](deslop/) | Remove AI-generated "slop" from code changes |
-| [dig](dig/) | Clarify ambiguities in plans with structured questions |
-| [fix-ci](fix-ci/) | Automatically diagnose and fix CI failures |
+| [clean-code](clean-code/) | Post-implementation code quality polishing (simplify → deslop → comment/dead-code check) |
+| [codex](codex/) | Invoke Codex CLI (OpenAI) for reviewing plans, designs, and code |
+| [cursor](cursor/) | Invoke Cursor Agent CLI (Composer 2) for reviewing plans, designs, and code |
 | [decomposition](decomposition/) | Decompose complex tasks into detailed, actionable todos |
+| [deslop](deslop/) | Remove AI-generated "slop" from code changes |
+| [dig](dig/) | Deep exploratory interview to discover unknowns and strengthen plans |
+| [fix-ci](fix-ci/) | Automatically diagnose and fix CI failures |
 
 ## Commands
 
-### `/dig` - Plan Dig Mode
+### `/clean-code` - Code Quality Polish
 
-Clarify ambiguities in plans with structured questions using the AskUserQuestion tool.
-
-**Purpose:**
-Analyze the current plan or discussion, identify unclear points, and ask structured questions to clarify requirements before implementation.
-
-**Features:**
-- Auto-loads context files (CLAUDE.md, prd.md, README.md)
-- Identifies ambiguities across multiple categories (Architecture, Data, API, UI/UX, Testing, DevOps, Scope)
-- Generates 2-4 structured questions with concrete options including pros/cons
-- Outputs decisions and next steps after receiving answers
+実装完了後のコード品質仕上げ。simplify → deslop → コメント整合性チェック → デッドコード検出の順で実行。
 
 **Usage:**
 ```
-/dig
+/clean-code
+/clean-code src/components/Button.tsx
+```
+
+### `/codex` - Codex Review
+
+Codex CLI (OpenAI) を使って実装計画・設計・コードをレビュー。重大な問題と簡単に修正できる改善点のみを報告。
+
+**Usage:**
+```
+/codex
+```
+
+### `/cursor` - Cursor Review
+
+Cursor Agent CLI (Composer 2) を使って実装計画・設計・コードをレビュー。重大な問題と簡単に修正できる改善点のみを報告。
+
+**Usage:**
+```
+/cursor
+```
+
+### `/decomposition` - Task Decomposition
+
+複雑なタスクを詳細で実行可能なtodoに分解。各todoには独立して実行するのに十分な情報が含まれる。
+
+**Usage:**
+```
+/decomposition
 ```
 
 ### `/deslop` - Remove AI Code Slop
 
-Removes AI-generated "slop" from code changes in the current branch.
-
-**Purpose:**
-This command helps maintain code quality by identifying and removing unnecessary additions that AI assistants sometimes introduce, ensuring code remains consistent with the project's existing style and practices.
-
-**What it removes:**
-- Extra comments that a human wouldn't add or are inconsistent with the rest of the file
-- Extra defensive checks or try/catch blocks that are abnormal for that area of the codebase
-- Any other style that is inconsistent with the file
+現在のブランチのコード変更からAI生成のスロップ（不要なコメント、過剰な防御的チェック、スタイルの不整合）を除去。
 
 **Usage:**
 ```
 /deslop
 ```
 
+### `/dig` - Deep Exploratory Interview
+
+計画や議論の曖昧な点を特定し、構造化された質問で要件を明確化。
+
+**Usage:**
+```
+/dig
+```
+
 ### `/fix-ci` - Fix CI Failures
 
-Automatically diagnose and fix CI failures using sub-agent exploration.
-
-**Purpose:**
-This command helps quickly identify and resolve CI pipeline failures by analyzing logs, identifying root causes, and applying fixes.
-It checks `gh` authentication up front (and may ask you to log in), then iterates by pushing fixes and waiting for CI to rerun until checks are green or human intervention is required.
-For the detailed workflow, see [`fix-ci/commands/fix-ci.md`](fix-ci/commands/fix-ci.md).
+CI パイプラインの失敗を自動的に診断・修正。`gh` 認証を確認後、修正をpushしてCIが通るまで繰り返す。
 
 **Usage:**
 ```
 /fix-ci
-```
-
-### `/decomposition` - Task Decomposition
-
-Decompose complex tasks into detailed, actionable todos with rich descriptions.
-
-**Purpose:**
-This command helps break down complex tasks into specific, achievable, and small todos. Each todo has a rich description that contains all the information needed to execute the task independently.
-
-**Features:**
-- Analyzes current context, plans, and related files
-- Breaks down tasks into major components
-- Creates detailed todos with rich descriptions (What, Where, How, Why, Done when)
-- Ensures each todo is specific, achievable, and appropriately scoped (5-30 minutes)
-
-**Usage:**
-```
-/decomposition
 ```
 
 ## Plugin Structure
@@ -125,33 +125,13 @@ This repository is organized as a plugin marketplace containing multiple plugins
 .claude-plugin/
 └── marketplace.json    # Marketplace metadata
 
-deslop/                 # deslop plugin
-├── .claude-plugin/
-│   └── plugin.json
-├── commands/
-│   └── deslop.md
-└── README.md
-
-dig/                    # dig plugin
-├── .claude-plugin/
-│   └── plugin.json
-├── commands/
-│   └── dig.md
-└── README.md
-
-fix-ci/                 # fix-ci plugin
-├── .claude-plugin/
-│   └── plugin.json
-├── commands/
-│   └── fix-ci.md
-└── README.md
-
-decomposition/          # decomposition plugin
-├── .claude-plugin/
-│   └── plugin.json
-├── commands/
-│   └── decomposition.md
-└── README.md
+clean-code/             # clean-code plugin (command + skill)
+codex/                  # codex plugin (skill)
+cursor/                 # cursor plugin (skill)
+decomposition/          # decomposition plugin (command)
+deslop/                 # deslop plugin (command)
+dig/                    # dig plugin (command)
+fix-ci/                 # fix-ci plugin (command)
 ```
 
 ## Contributing
