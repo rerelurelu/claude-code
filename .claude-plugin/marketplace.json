@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "relu-marketplace",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Relu's Claude Code plugin marketplace",
   "owner": {
     "name": "Relu"
@@ -72,35 +72,20 @@
       ]
     },
     {
-      "name": "codex",
-      "source": "./codex",
-      "description": "Invokes Codex CLI (OpenAI) for reviewing implementation plans, designs, and code",
+      "name": "review",
+      "source": "./review",
+      "description": "Unified code review using Codex CLI (always) and optionally Cursor Agent CLI. Cross-references, debates, and applies fixes.",
       "version": "1.0.0",
       "author": {
         "name": "Relu"
       },
       "keywords": [
+        "code-review",
         "codex",
-        "code-review",
-        "openai",
-        "review",
-        "design-review"
-      ]
-    },
-    {
-      "name": "cursor",
-      "source": "./cursor",
-      "description": "Invokes Cursor Agent CLI (Composer 2) for reviewing implementation plans, designs, and code",
-      "version": "1.0.0",
-      "author": {
-        "name": "Relu"
-      },
-      "keywords": [
         "cursor",
-        "composer",
-        "code-review",
         "review",
-        "design-review"
+        "design-review",
+        "cross-reference"
       ]
     },
     {

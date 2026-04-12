@@ -44,8 +44,7 @@ Then in Claude Code:
 | Plugin | Description |
 |--------|-------------|
 | [clean-code](clean-code/) | Post-implementation code quality polishing (simplify → deslop → comment/dead-code check) |
-| [codex](codex/) | Invoke Codex CLI (OpenAI) for reviewing plans, designs, and code |
-| [cursor](cursor/) | Invoke Cursor Agent CLI (Composer 2) for reviewing plans, designs, and code |
+| [review](review/) | Unified code review using Codex CLI and optionally Cursor Agent CLI |
 | [decomposition](decomposition/) | Decompose complex tasks into detailed, actionable todos |
 | [deslop](deslop/) | Remove AI-generated "slop" from code changes |
 | [dig](dig/) | Deep exploratory interview to discover unknowns and strengthen plans |
@@ -63,22 +62,14 @@ Post-implementation code quality polishing. Runs simplify → deslop → comment
 /clean-code src/components/Button.tsx
 ```
 
-### `/codex` - Codex Review
+### `/review` - Unified Code Review
 
-Review implementation plans, designs, and code using Codex CLI (OpenAI). Reports only critical issues and easy-to-fix improvements.
-
-**Usage:**
-```
-/codex
-```
-
-### `/cursor` - Cursor Review
-
-Review implementation plans, designs, and code using Cursor Agent CLI (Composer 2). Reports only critical issues and easy-to-fix improvements.
+Review implementation plans, designs, and code using Codex CLI (always) and optionally Cursor Agent CLI. Cross-references findings, debates disagreements, filters by severity, and applies fixes for critical issues.
 
 **Usage:**
 ```
-/cursor
+/review
+/review src/components/Button.tsx
 ```
 
 ### `/decomposition` - Task Decomposition
@@ -126,12 +117,11 @@ This repository is organized as a plugin marketplace containing multiple plugins
 └── marketplace.json    # Marketplace metadata
 
 clean-code/             # clean-code plugin (command + skill)
-codex/                  # codex plugin (skill)
-cursor/                 # cursor plugin (skill)
 decomposition/          # decomposition plugin (command)
 deslop/                 # deslop plugin (command)
 dig/                    # dig plugin (command)
 fix-ci/                 # fix-ci plugin (command)
+review/                 # review plugin (skill)
 ```
 
 ## Contributing

@@ -1,0 +1,11 @@
+{
+  "name": "review",
+  "version": "1.0.0",
+  "description": "Unified code review using Codex CLI and optionally Cursor Agent CLI. Cross-references findings, debates disagreements, and applies fixes.",
+  "author": {
+    "name": "Relu"
+  },
+  "repository": "https://github.com/rerelurelu/claude-code",
+  "license": "GPL-3.0",
+  "keywords": ["code-review", "codex", "cursor", "review", "design-review", "cross-reference"]
+}
