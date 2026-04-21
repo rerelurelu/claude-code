@@ -1,6 +1,6 @@
 # deslop
 
-Remove AI-generated "slop" from code changes in the current branch.
+Remove AI-generated "slop" from uncommitted code changes (or a specified scope).
 
 ## Overview
 
@@ -29,7 +29,7 @@ The skill is automatically invoked by Claude when needed, or you can manually in
 
 ## How it works
 
-1. Check the diff against the main branch
+1. Determine the target scope — `$ARGUMENTS` if given, otherwise uncommitted changes (`git diff HEAD` plus untracked files from `git status --porcelain`)
 2. Analyze changes for AI-generated patterns
 3. Remove unnecessary additions
 4. Provide a brief 1-3 sentence summary of what was changed
